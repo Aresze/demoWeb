@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+<body>
+<p th:text="'Hello, ' + ${username} + '!'" />
+    <form action="#" th:action="@{/edit}" method="post">
+        <div><label> Password: <input type="password"   name="password"/> </label></div>
+        <div><p th:text="'Your IP: ' + ${ip}" /></div>
+        <div><label> User Timezone : <input type="text" th:value="${timezone}"  name="timezone"/> </label></div>
+        <div><input type="submit" value="Save"/></div>
+    </form>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+</body>
+</html>
